@@ -1,23 +1,32 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <content-header-vue />
 </template>
-
+<script lang="ts">
+import { defineComponent } from "@vue/runtime-core";
+import ContentHeaderVue from "./views/ContentHeader.vue";
+export default defineComponent({
+  name: "ContentHeader",
+  components: {
+    ContentHeaderVue,
+  },
+});
+</script>
 <style lang="scss">
+@import "./assets/mixin.scss";
+body {
+  overflow-x: hidden;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #f8f7f1;
 }
 
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
