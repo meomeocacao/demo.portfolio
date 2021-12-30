@@ -33,6 +33,7 @@ export interface Exp {
   company: string;
   location: string;
   position: string;
+  website: string;
   projects: Project[];
   leave?: Date;
 }
@@ -40,8 +41,13 @@ export interface Exp {
 export interface Project {
   title: string;
   content: string;
-  technology: string[];
+  technology: Technology[];
   type: string;
+}
+
+export interface Technology {
+  name: string;
+  link: string;
 }
 
 export interface UserState {

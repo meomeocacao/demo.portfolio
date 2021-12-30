@@ -10,8 +10,6 @@ import * as FaIcons from "oh-vue-icons/icons";
 const Fa = Object.values({ ...FaIcons });
 addIcons(...Fa);
 
-const app = createApp(App);
-app.component("v-icon", OhVueIcon);
 createApp(App)
   .component("v-icon", OhVueIcon)
   .use(ElementPlus)

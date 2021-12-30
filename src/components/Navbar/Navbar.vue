@@ -204,6 +204,7 @@ export default defineComponent({
 .open {
   height: 150px;
   visibility: visible;
+  z-index: 999999999;
   > div {
     > a {
       margin: 10px;

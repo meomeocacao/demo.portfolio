@@ -1,5 +1,6 @@
 <template>
   <NavbarVue :phone="userInfor.contact.phone" />
+  <cate-weather />
   <router-view />
 </template>
 
@@ -9,10 +10,12 @@ import NavbarVue from "@/components/Navbar/Navbar.vue";
 import { ref } from "vue";
 import { UserGetter, UserItem } from "@/store/modules/user/interfaces";
 import { useStore } from "vuex";
+import CateWeather from "@/components/CateWeather/CateWeather.vue";
 export default defineComponent({
   name: "ContentHeader",
   components: {
     NavbarVue,
+    CateWeather,
   },
   setup() {
     const store = useStore();

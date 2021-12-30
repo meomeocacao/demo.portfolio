@@ -3,6 +3,14 @@ $mobile-width: 480px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
+$background-rain: "https://i.redd.it/27fxerfk7au51.jpg";
+$background-cloud: "https://wallpaper.dog/large/20500144.jpg";
+$background-night: "https://cdn.dribbble.com/users/518045/screenshots/16544731/media/92bbe419118fa8e4da65225a7459ddd2.png?compress=1&resize=800x600";
+$background-morning: "https://wallpaper.dog/large/20500144.jpg";
+$background-midnight: "https://i.redd.it/knvise3sljax.png";
+$background-noon: "https://mocah.org/uploads/posts/849210-Firewatch-Campo-Santo-Evening-Forests-Mountains.jpg";
+$background-afternoon: "https://wallpaperaccess.com/full/1267228.png";
+$background-evening: "https://www.gamespot.com/a/uploads/screen_kubrick/536/5360430/2826623-1.jpg";
 @mixin mobile {
   @media (max-width: #{$mobile-width - 1px}) {
     @content;
@@ -19,4 +27,48 @@ $desktop-width: 1024px;
   @media (min-width: #{$desktop-width}) {
     @content;
   }
+}
+
+@mixin icon-desktop($bg-color) {
+  background-color: $bg-color;
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin background-weather($image-weather) {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 850px;
+  background-image: url($image-weather);
+}
+
+@mixin circle-timeline($left) {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 4px solid orange;
+  top: 5%;
+  left: $left;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@mixin time-line($left) {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: rgb(88, 88, 88);
+  top: 5%;
+  bottom: 0;
+  left: $left;
+  margin-left: -3px;
 }

@@ -35,16 +35,19 @@
       </div>
     </template>
   </draggable>
+  <cate-weather />
 </template>
 
 <script lang="ts">
 import { UserProfile } from "@/store";
 import { defineComponent, ref } from "@vue/runtime-core";
 import draggable from "vuedraggable";
+import CateWeather from "../components/CateWeather/CateWeather.vue";
 export default defineComponent({
   name: "DragDrop",
   components: {
     draggable,
+    CateWeather,
   },
   setup() {
     const data = ref<UserProfile[]>([

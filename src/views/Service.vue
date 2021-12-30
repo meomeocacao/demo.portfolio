@@ -39,22 +39,28 @@
         <div class="icon-desktop">
           <v-icon name="io-desktop-sharp" scale="1.5 " fill="white" />
         </div>
-        <p>Website App</p>
-        <h5 class="clone-title">NodeJs</h5>
+        <div class="right-content">
+          <p>Website App</p>
+          <h5 class="clone-title">NodeJs</h5>
+        </div>
       </div>
       <div>
         <div class="icon-phone">
           <v-icon name="bi-phone" scale="1.5 " fill="white" />
         </div>
-        <p>Mobile Responsive</p>
-        <h5 class="clone-title">VueJs</h5>
+        <div class="right-content">
+          <p>Mobile Responsive</p>
+          <h5 class="clone-title">VueJs</h5>
+        </div>
       </div>
       <div>
         <div class="icon-database">
           <v-icon name="oi-database" scale="1.5 " fill="white" />
         </div>
-        <p>Database Server</p>
-        <h5 class="clone-title">PostgreSQl</h5>
+        <div class="right-content">
+          <p>Database Server</p>
+          <h5 class="clone-title">PostgreSQl</h5>
+        </div>
       </div>
     </div>
     <div class="introduce__right">
@@ -83,15 +89,17 @@
       </div>
     </div>
   </div>
+  <experience-summary :exp="userInfor.exp" />
 </template>
 
 <script lang="ts">
-import { UserItem, UserGetter } from "@/store/modules/user/interfaces";
+import ExperienceSummary from "@/components/ExperienceSummary/ExperienceSummary.vue";
+import { UserGetter, UserItem } from "@/store/modules/user/interfaces";
 import { defineComponent } from "@vue/runtime-core";
 import { ref } from "vue";
 import { useStore } from "vuex";
-
 export default defineComponent({
+  components: { ExperienceSummary },
   name: "Service",
   setup() {
     const store = useStore();
@@ -134,6 +142,7 @@ export default defineComponent({
 
     return { userInfor, expInfor, certificate };
   },
+  methods: {},
 });
 </script>
 
@@ -297,34 +306,32 @@ h3 {
       background-color: white;
       margin: 5px;
       position: relative;
+      align-items: center;
       @include mobile {
         width: 100%;
       }
+
       .clone-title {
         margin: 0;
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translate(-50%, -50%);
-        width: 500px;
-        font-weight: 500;
         @include mobile {
           width: 100%;
         }
       }
-      > div {
+
+      .right-content {
+        margin: 0;
         margin-left: 20px;
-        padding: 20px;
-        border-radius: 50%;
+        text-align: start;
       }
+
       .icon-desktop {
-        background-color: green;
+        @include icon-desktop(green);
       }
       .icon-phone {
-        background-color: orange;
+        @include icon-desktop(orange);
       }
       .icon-database {
-        background-color: red;
+        @include icon-desktop(red);
       }
       > p {
         margin-left: 20px;
